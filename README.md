@@ -41,7 +41,7 @@ After you purchase the domain from a registrar:
 3. At your domain registrar, set the apex/root (`@`) **A records** to GitHub Pages' published IPv4 addresses: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. Use the current GitHub documentation in case the published values change.
 4. Add a `CNAME` record for `www` pointing to your **GitHub Pages user-site host**, e.g. `YOUR-USERNAME.github.io` (replace with your actual GitHub username; do not include a repository path). You may instead follow the registrar-specific recommendations GitHub shows for the domain.
 5. Wait for DNS to propagate, then return to **Settings → Pages** and enable **Enforce HTTPS** once GitHub offers it. Do not use wildcard DNS records.
-6. Change the canonical URL and all absolute `og:*`, `twitter:image`, JSON-LD, `robots.txt`, `sitemap.xml`, and `llms.txt` website URLs to the working final domain. The current project is pre-filled with `https://atmridwanulhaque.com/` as the intended future domain. If it is not active yet, use the actually deployed GitHub Pages URL temporarily, then switch back after the custom domain and HTTPS work.
+6. Until the custom domain is purchased and connected, this package uses the current GitHub Pages URL `https://tanjimarup.github.io/atmridwanulhaque/` for the canonical URL, social preview URLs, JSON-LD and crawler/sitemap references. After `atmridwanulhaque.com` is connected and HTTPS works, change those absolute URLs in `index.html`, `robots.txt`, `sitemap.xml`, and `llms.txt` to `https://atmridwanulhaque.com/`. Keep image URLs, JSON-LD `@id` values, and the `og:url` consistent with the selected primary domain.
 
 GitHub's official guide: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
 
@@ -51,7 +51,7 @@ GitHub's official guide: https://docs.github.com/en/pages/configuring-a-custom-d
 - `robots.txt` asks several crawlers to access public pages. It is an advisory convention, not a technical guarantee. Crawlers, search engines and AI assistants decide independently what to crawl, index or cite; no metadata can guarantee recommendations or placement.
 - After the website is publicly deployed, add the sitemap to Google Search Console and Bing Webmaster Tools. Confirm their current ownership-verification and sitemap-submission steps in their official documentation.
 - Social previews need absolute HTTPS URLs and the image must be publicly reachable. Once live, test the home URL and preview image in social sharing/debugging tools.
-- GitHub Pages serves static assets only. Contact actions use `tel:`, `wa.me`, `mailto:` and a Facebook link; there is no contact-form backend. A future form would need a trusted form service or serverless backend.
+- GitHub Pages serves static assets only. Contact actions use `tel:` and `mailto:` links; WhatsApp and Facebook contact links have been removed as requested. There is no contact-form backend. A future form would need a trusted form service or serverless backend.
 
 ## How to update content
 
@@ -89,7 +89,7 @@ Keep the original source files in Git. Make changes in a branch or backup commit
 
 ## Research notes & source checks
 
-- **Agroho / mobile hospitals:** Drip by Drip documents mobile hospital work with Agroho, including a pilot launched in 2022 and a later programme with Stanley/Stella; see https://dripbydrip.org/mobile-hospitals/. The page does not replace official registration or audited organizational information; use only the claims actually published on that page.
+- **Agroho / mobile hospitals:** The current portfolio copy describes mobile-hospital services based on the professional information supplied for the profile. The external Drip by Drip link has been removed from the public website at the owner’s request.
 - **Sanitation supply-chain research:** IRC catalogues *Sanitation demand and supply in rural Bangladesh: rapid assessment to identify supply chain challenges* and lists IRC and BRAC as publishers: https://www.ircwash.org/resources/sanitation-demand-and-supply-rural-bangladesh
 - **Faecal-sludge recovery paper:** IRC lists *Nothing left to waste: the prospects for faecal sludge-based organic fertiliser in Bangladesh*: https://www.ircwash.org/sites/default/files/faecal_sludge_management_paper_brac_irc_2015.pdf
 - **Soft microfinance coverage:** Daily Sun published *Soft Microfinance, a Welfare Financing* at https://www.daily-sun.com/post/773576/; The New Nation lists its related piece at https://dailynewnation.com/news/682638; New Age has *Soft microfinance: potential game-changer* at https://www.newagebd.net/post/opinion/258247/soft-microfinance-potential-game-changer.
@@ -100,6 +100,6 @@ Keep the original source files in Git. Make changes in a branch or backup commit
 ## Content review items before launch
 
 - Confirm the final official spelling/style for the MBA institution line, because the supplied details name both Military Institute of Science and Technology and Bangladesh University of Professionals.
-- The duplicate BRAC Senior Sector Specialist entry in the supplied material is represented once to avoid duplicate experience.
+- BRAC WASH roles are consolidated into one 2012–2018 entry, following the requested website revision.
 - Verify the wording, exact years and attribution of all awards and programme metrics before promoting them in other materials.
 - Add any verified LinkedIn/GitHub URLs, CV file, and official Agroho website/registration record if you have them.

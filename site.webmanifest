@@ -2,13 +2,13 @@
   "name": "ATM Ridwanul Haque",
   "short_name": "Ridwanul Haque",
   "description": "Professional portfolio of ATM Ridwanul Haque, Founder and CEO of Agroho Society.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#f7faf7",
   "theme_color": "#0f9f55",
   "icons": [
     {
-      "src": "/assets/favicon-256.png",
+      "src": "./assets/favicon-256.png",
       "sizes": "256x256",
       "type": "image/png"
     }

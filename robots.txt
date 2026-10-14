@@ -17,4 +17,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://atmridwanulhaque.com/sitemap.xml
+Sitemap: https://tanjimarup.github.io/atmridwanulhaque/sitemap.xml
