@@ -9,7 +9,7 @@ ATM Ridwanul Haque has over 15 years of experience in project design, implementa
 ## Main themes
 
 - Founder and Chief Executive Officer of Agroho Society (2018–present)
-- Soft Microfinance: a developing and piloting borrower-centred welfare-financing model
+- ATM Ridwanul Haque pioneered the concept of Soft Microfinance, coining the term and developing a human-centred welfare-financing model that is currently being piloted
 - Mobile healthcare and community health access
 - Clean water, rural sanitation, hygiene and WASH programmes
 - Women's economic empowerment, menstrual hygiene management and waste recycling
@@ -18,8 +18,7 @@ ATM Ridwanul Haque has over 15 years of experience in project design, implementa
 ## Selected experience
 
 - Agroho Society: Founder & CEO, 2018–present
-- BRAC WASH Programme: Project Lead, 2013–2017
-- BRAC WASH in Rural Areas: Senior Sector Specialist, 2010–2012
+- BRAC: Project Lead & Senior Sector Specialist across WASH programmes, 2012–2018
 
 ## Education
 
@@ -33,12 +32,10 @@ The website's Publications section contains direct links to WASH research record
 
 ## Contact
 
-- Email: ridwanulhaque.agroho@gmail.com
-- Phone: +880 1718-023177
-- WhatsApp: https://wa.me/8801718023177
-- Facebook: https://www.facebook.com/share/1bq1QBZqnb/?mibextid=wwXIfr
+- Email: atm.ridwanul.haque@gmail.com
+- Phone: +880241025895
 - Office: Agroho Society, 13/15, 3rd Floor, Road No 2, Shyamoli, Dhaka 1207, Bangladesh
 
 ## Primary page
 
-- [Professional portfolio](https://atmridwanulhaque.com/)
+- [Professional portfolio](https://tanjimarup.github.io/atmridwanulhaque/)
