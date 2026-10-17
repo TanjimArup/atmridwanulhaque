@@ -4,12 +4,13 @@ A responsive, accessible portfolio website built with **plain HTML, CSS and Java
 
 ## What's included
 
-- `index.html` — complete portfolio sections, contact actions, publication links, metadata and Schema.org JSON-LD.
+- `index.html` — English portfolio, contact actions, publication links, SEO metadata and Schema.org JSON-LD.
+- `bn/index.html` — Bengali-language version with its own Bengali metadata and structured data.
 - `styles.css` — responsive layout, brand-green palette, dark/light themes and reduced-motion support.
 - `script.js` — accessible mobile navigation, dark-mode persistence and publication filters.
 - `assets/` — optimized WebP portrait and team image, logo image, icon files and 1200×630 social preview graphic.
 - `robots.txt` — crawler guidance, including common AI/search crawlers, plus sitemap location.
-- `sitemap.xml` — basic XML sitemap for the intended custom domain.
+- `sitemap.xml` — XML sitemap with English and Bengali URLs and language alternates.
 - `llms.txt` — a concise, AI-readable profile overview.
 - `site.webmanifest` and `favicon.ico` — browser/app identity assets.
 
@@ -80,7 +81,7 @@ Add only verified profile URLs. Place any new social URL in the contact section,
 
 This starter is a static site, so the easiest future upgrades are:
 - a dedicated page for each publication or project, with its own title/description and structured data;
-- a Bangla language version using a separate `/bn/` page and `lang="bn-BD"` metadata;
+- additional dedicated language pages using `/bn/`, language-specific metadata, and `hreflang` annotations; the Bengali page is included in this package;
 - a content-management workflow (for example, content stored as Markdown and a static-site generator) if updates become frequent;
 - an accessible contact form using a backend or reputable form service;
 - performance monitoring, analytics with appropriate privacy disclosures, and search-console monitoring.
@@ -103,3 +104,12 @@ Keep the original source files in Git. Make changes in a branch or backup commit
 - BRAC WASH roles are consolidated into one 2012–2018 entry, following the requested website revision.
 - Verify the wording, exact years and attribution of all awards and programme metrics before promoting them in other materials.
 - Add any verified LinkedIn/GitHub URLs, CV file, and official Agroho website/registration record if you have them.
+
+
+## English and Bengali pages
+
+The English page lives at `index.html`. The Bengali page lives at `bn/index.html` and is independently crawlable with `lang="bn-BD"`, a Bengali title/description, structured data, canonical URL, and `hreflang` links. The header language link switches between the two pages. Publication titles remain in their original published language where appropriate; summaries, navigation, project descriptions, profile copy and controls are translated.
+
+When editing later, update the English wording in `index.html` and its equivalent Bengali wording in `bn/index.html` so that both languages remain consistent. If the site is deployed at a different repository path or custom domain, update canonical, Open Graph, JSON-LD, `robots.txt`, `sitemap.xml`, `llms.txt`, and the `hreflang` URLs in both HTML files.
+
+The two decorative orbit circles around the portrait were removed at the owner's request. Paragraph copy is justified, and the About section includes the supplied 63-district and international professional-visit details. A small footer note includes the owner-supplied claim that copyright for the Soft Microfinance model is registered in ATM Ridwanul Haque’s name.

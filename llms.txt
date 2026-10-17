@@ -39,3 +39,8 @@ The website's Publications section contains direct links to WASH research record
 ## Primary page
 
 - [Professional portfolio](https://tanjimarup.github.io/atmridwanulhaque/)
+
+
+## Language versions
+- English: https://tanjimarup.github.io/atmridwanulhaque/
+- Bengali: https://tanjimarup.github.io/atmridwanulhaque/bn/

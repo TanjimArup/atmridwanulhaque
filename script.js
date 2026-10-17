@@ -1,5 +1,6 @@
 (() => {
   const root = document.documentElement;
+  const isBengali = () => root.lang.toLowerCase().startsWith('bn');
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = themeToggle?.querySelector('.theme-icon');
   const themeLabel = themeToggle?.querySelector('.theme-label');
@@ -12,8 +13,8 @@
     root.dataset.theme = theme;
     const isDark = theme === 'dark';
     if (themeIcon) themeIcon.textContent = isDark ? '☀' : '☾';
-    if (themeLabel) themeLabel.textContent = isDark ? 'Light mode' : 'Dark mode';
-    if (themeToggle) themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    if (themeLabel) themeLabel.textContent = isBengali() ? (isDark ? 'লাইট মোড' : 'ডার্ক মোড') : (isDark ? 'Light mode' : 'Dark mode');
+    if (themeToggle) themeToggle.setAttribute('aria-label', isBengali() ? (isDark ? 'লাইট মোড চালু করুন' : 'ডার্ক মোড চালু করুন') : (isDark ? 'Switch to light mode' : 'Switch to dark mode'));
     const themeMeta = document.querySelector('meta[name="theme-color"]');
     if (themeMeta) themeMeta.setAttribute('content', isDark ? '#101a14' : '#0f9f55');
   }
@@ -56,7 +57,7 @@
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', String(active));
     });
-    if (publicationCount) publicationCount.textContent = `${shown} publication${shown === 1 ? '' : 's'}`;
+    if (publicationCount) publicationCount.textContent = isBengali() ? `${String(shown).replace(/[0-9]/g, d => '০১২৩৪৫৬৭৮৯'[Number(d)])}টি প্রকাশনা` : `${shown} publication${shown === 1 ? '' : 's'}`;
   }
   filterButtons.forEach(button => button.addEventListener('click', () => applyPublicationFilter(button.dataset.filter || 'all')));
   applyPublicationFilter('all');
