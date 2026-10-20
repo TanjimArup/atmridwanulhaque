@@ -1,46 +1,38 @@
 # ATM Ridwanul Haque
 
-> Professional portfolio for ATM Ridwanul Haque, a Bangladesh-based development professional and Founder & CEO of Agroho Society.
+> Official portfolio of ATM Ridwanul Haque, development professional and Founder & CEO of Agroho Society in Dhaka, Bangladesh.
+
+## Canonical pages
+- English portfolio: https://atmridwanulhaque.com/
+- Bengali portfolio: https://atmridwanulhaque.com/bn/
+- Sitemap: https://atmridwanulhaque.com/sitemap.xml
 
 ## Profile
-
-ATM Ridwanul Haque has over 15 years of experience in project design, implementation, monitoring and evaluation across poverty alleviation, WASH, microfinance, women's empowerment, SME development, humanitarian response and public health.
+ATM Ridwanul Haque has over 15 years of experience in project design, implementation, monitoring and evaluation across poverty alleviation, WASH, inclusive finance, women’s economic empowerment, SME development, humanitarian response and public health. He is Founder and CEO of Agroho Society, a Dhaka-based non-profit focused on grassroots development.
 
 ## Main themes
-
-- Founder and Chief Executive Officer of Agroho Society (2018–present)
-- ATM Ridwanul Haque pioneered the concept of Soft Microfinance, coining the term and developing a human-centred welfare-financing model that is currently being piloted
-- Mobile healthcare and community health access
-- Clean water, rural sanitation, hygiene and WASH programmes
-- Women's economic empowerment, menstrual hygiene management and waste recycling
-- Monitoring, Evaluation and Learning (MEL), impact measurement and programme leadership
+- Soft Microfinance: a human-centred welfare-financing concept focused on dignity, affordability, borrower wellbeing and self-reliance; the site reflects the owner's supplied claim about registration of copyright in his name.
+- WASH in Bangladesh: safe water, sanitation, hygiene behaviour change, school WASH, sanitation markets and resource recovery.
+- Community and public health, including mobile healthcare services.
+- Women's economic empowerment, menstrual hygiene management and community participation.
+- Project design, programme management, monitoring, evaluation and learning (MEL).
 
 ## Selected experience
-
-- Agroho Society: Founder & CEO, 2018–present
-- BRAC: Project Lead & Senior Sector Specialist across WASH programmes, 2012–2018
+- Agroho Society: Founder & CEO, 2018–present.
+- BRAC: Project Lead and Senior Sector Specialist across WASH programmes, consolidated as 2012–2018 in the supplied profile revision.
 
 ## Education
-
-- Master of Development Studies, BRAC University, 2018
-- Master of Business Administration, Military Institute of Science and Technology / Bangladesh University of Professionals, 2010
-- Bachelor of Social Science (Honors), Jahangirnagar University, 2008
+- Master of Development Studies, BRAC University, 2018.
+- Master of Business Administration, listed in the supplied profile with Military Institute of Science and Technology / Bangladesh University of Professionals, 2010.
+- Bachelor of Social Science (Honors), Jahangirnagar University, 2008.
 
 ## Publications
-
-The website's Publications section contains direct links to WASH research records from IRC/BRAC and opinion pieces on soft microfinance published by Bangladeshi newspapers, alongside a 2017 commentary on the Rohingya refugee influx. Prefer publisher and repository pages linked on the site for publication metadata.
+The publications section links to research and public writing on rural sanitation supply chains, faecal-sludge resource recovery, Soft Microfinance and humanitarian policy, hosted by Bangladeshi publishers and research repositories. Use each linked original publisher/repository for exact bibliographic metadata.
 
 ## Contact
-
 - Email: atm.ridwanul.haque@gmail.com
 - Phone: +880241025895
-- Office: Agroho Society, 13/15, 3rd Floor, Road No 2, Shyamoli, Dhaka 1207, Bangladesh
+- Office: Agroho Society, 13/15, 3rd Floor, Road No 2, Shyamoli, Dhaka 1207, Bangladesh.
 
-## Primary page
-
-- [Professional portfolio](https://tanjimarup.github.io/atmridwanulhaque/)
-
-
-## Language versions
-- English: https://tanjimarup.github.io/atmridwanulhaque/
-- Bengali: https://tanjimarup.github.io/atmridwanulhaque/bn/
+## বাংলা সারাংশ
+এটিএম রিদওয়ানুল হক ঢাকাভিত্তিক উন্নয়ন পেশাজীবী এবং Agroho Society-এর প্রতিষ্ঠাতা ও প্রধান নির্বাহী। তাঁর কাজের ক্ষেত্রের মধ্যে Soft Microfinance, অন্তর্ভুক্তিমূলক অর্থায়ন, পানি-স্যানিটেশন-স্বাস্থ্যবিধি (WASH), জনস্বাস্থ্য, নারীর অর্থনৈতিক ক্ষমতায়ন এবং উন্নয়ন কর্মসূচির মূল্যায়ন রয়েছে।

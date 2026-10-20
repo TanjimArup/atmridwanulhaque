@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI search and assistant crawlers (robots.txt is advisory, not an access control).
+# These directives are advisory; each crawler controls its own use of public content.
 User-agent: OAI-SearchBot
 Allow: /
 User-agent: ChatGPT-User
@@ -17,4 +17,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://tanjimarup.github.io/atmridwanulhaque/sitemap.xml
+Sitemap: https://atmridwanulhaque.com/sitemap.xml
