@@ -1,115 +1,96 @@
-# ATM Ridwanul Haque — Portfolio Website
+# ATM Ridwanul Haque — Bilingual Portfolio Website
 
-A responsive, accessible portfolio website built with **plain HTML, CSS and JavaScript**. No build step, framework, paid plugin or backend is required. It is ready to upload to a GitHub repository and publish with GitHub Pages.
+A responsive static website built with HTML, CSS and JavaScript. It has English and Bengali pages, dark mode, publication filters, responsive navigation, SEO/social metadata, Schema.org structured data, a sitemap, robots.txt and llms.txt. No backend or build process is required.
 
-## What's included
+## Project files
 
-- `index.html` — English portfolio, contact actions, publication links, SEO metadata and Schema.org JSON-LD.
-- `bn/index.html` — Bengali-language version with its own Bengali metadata and structured data.
-- `styles.css` — responsive layout, brand-green palette, dark/light themes and reduced-motion support.
-- `script.js` — accessible mobile navigation, dark-mode persistence and publication filters.
-- `assets/` — optimized WebP portrait and team image, logo image, icon files and 1200×630 social preview graphic.
-- `robots.txt` — crawler guidance, including common AI/search crawlers, plus sitemap location.
-- `sitemap.xml` — XML sitemap with English and Bengali URLs and language alternates.
-- `llms.txt` — a concise, AI-readable profile overview.
-- `site.webmanifest` and `favicon.ico` — browser/app identity assets.
+- `index.html` — English portfolio.
+- `bn/index.html` — Bengali portfolio.
+- `styles.css`, `script.js` — layout and interactions.
+- `assets/` — portrait, team photo, Agroho logo, favicons and 1200×630 Open Graph/social-sharing image.
+- `CNAME` — custom domain `atmridwanulhaque.com` for branch-based GitHub Pages publishing.
+- `robots.txt`, `sitemap.xml`, `llms.txt`, `site.webmanifest` — discovery and site metadata.
 
-## Preview locally
+## 1. Connect Namecheap domain to GitHub Pages
 
-1. Unzip this project.
-2. Open `index.html` in a browser. Most sections work from a local file.
-3. For a more realistic local web preview, open a terminal inside this folder and run `python -m http.server 8000`, then visit `http://localhost:8000`.
+The custom-domain metadata in this package points to `https://atmridwanulhaque.com/`. Set up the domain first or coordinate deployment with the DNS change so the canonical URL resolves.
 
-No Node.js or package installation is needed.
+### A. Verify domain ownership on GitHub
 
-## Deploy on GitHub Pages
+1. On GitHub, open **Profile picture → Settings → Pages** (profile-level settings, not repository settings).
+2. Choose **Add a domain**, enter `atmridwanulhaque.com`, and follow GitHub's instructions to create a TXT record.
+3. In Namecheap, open **Domain List → Manage → Advanced DNS → Host Records** and add the exact TXT host/value provided by GitHub. Save it, return to GitHub, and complete verification. Keep the TXT record.
 
-1. Sign in to GitHub and create a **public repository** such as `atm-ridwanul-haque-portfolio` (or use a user site repository if preferred).
-2. Upload every file and folder from this project to the repository root. `index.html` must be at the top level, not nested inside another folder.
-3. Open the repository's **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-5. GitHub will show the published Pages URL once the deployment finishes. Open it on desktop and on a phone to test navigation, images, contact links and dark mode.
-6. Make future changes by editing files in the repository and committing the updates. GitHub Pages will publish the new version.
+Namecheap Host Records are available when the domain uses Namecheap BasicDNS, PremiumDNS or FreeDNS. If the domain uses custom nameservers, manage DNS at the active DNS provider instead.
 
-If you deploy to a `username.github.io/repository-name/` project URL before the custom domain is connected, update the canonical URL and absolute metadata URLs as explained in the domain section below. This avoids telling search engines to index a URL that does not resolve yet.
+### B. Set the custom domain in the repository
 
-## Connect `atmridwanulhaque.com` later
+1. Open `https://github.com/TanjimArup/atmridwanulhaque`.
+2. Go to **Settings → Pages**.
+3. Under **Custom domain**, enter `atmridwanulhaque.com` and click **Save**. With branch-based deployment GitHub Pages normally writes a root-level `CNAME` file; this package also includes it.
+4. Keep the current publishing source set to `main` and `/(root)` unless the repository is configured differently.
 
-After you purchase the domain from a registrar:
+### C. Add website DNS records in Namecheap
 
-1. Publish the site on GitHub Pages first, and verify ownership of the domain in GitHub if that option is available for the account.
-2. In the repository, open **Settings → Pages → Custom domain** and enter `atmridwanulhaque.com`, then save. GitHub Pages may create a `CNAME` file automatically for branch-based publishing.
-3. At your domain registrar, set the apex/root (`@`) **A records** to GitHub Pages' published IPv4 addresses: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. Use the current GitHub documentation in case the published values change.
-4. Add a `CNAME` record for `www` pointing to your **GitHub Pages user-site host**, e.g. `YOUR-USERNAME.github.io` (replace with your actual GitHub username; do not include a repository path). You may instead follow the registrar-specific recommendations GitHub shows for the domain.
-5. Wait for DNS to propagate, then return to **Settings → Pages** and enable **Enforce HTTPS** once GitHub offers it. Do not use wildcard DNS records.
-6. Until the custom domain is purchased and connected, this package uses the current GitHub Pages URL `https://tanjimarup.github.io/atmridwanulhaque/` for the canonical URL, social preview URLs, JSON-LD and crawler/sitemap references. After `atmridwanulhaque.com` is connected and HTTPS works, change those absolute URLs in `index.html`, `robots.txt`, `sitemap.xml`, and `llms.txt` to `https://atmridwanulhaque.com/`. Keep image URLs, JSON-LD `@id` values, and the `og:url` consistent with the selected primary domain.
+In **Domain List → Manage → Advanced DNS → Host Records**, add these records:
 
-GitHub's official guide: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+| Type | Host | Value |
+|---|---|---|
+| A Record | `@` | `185.199.108.153` |
+| A Record | `@` | `185.199.109.153` |
+| A Record | `@` | `185.199.110.153` |
+| A Record | `@` | `185.199.111.153` |
+| CNAME Record | `www` | `tanjimarup.github.io` |
 
-## SEO and AI crawler notes
+Use the default/automatic TTL. GitHub documents additional IPv6 AAAA records if you want IPv6 support. Replace only conflicting website records for `@`/`www`; do not delete MX records used for email or unrelated TXT records. Avoid wildcard records such as `*`. Do not set `www` to the apex domain; point it directly to `tanjimarup.github.io`.
 
-- The page has a clear title and description, index/follow robots metadata, Open Graph fields, Twitter large-card fields, canonical URL, JSON-LD for `Person`, `Organization` and `WebSite`, a sitemap, and `llms.txt`.
-- `robots.txt` asks several crawlers to access public pages. It is an advisory convention, not a technical guarantee. Crawlers, search engines and AI assistants decide independently what to crawl, index or cite; no metadata can guarantee recommendations or placement.
-- After the website is publicly deployed, add the sitemap to Google Search Console and Bing Webmaster Tools. Confirm their current ownership-verification and sitemap-submission steps in their official documentation.
-- Social previews need absolute HTTPS URLs and the image must be publicly reachable. Once live, test the home URL and preview image in social sharing/debugging tools.
-- GitHub Pages serves static assets only. Contact actions use `tel:` and `mailto:` links; WhatsApp and Facebook contact links have been removed as requested. There is no contact-form backend. A future form would need a trusted form service or serverless backend.
+### D. Confirm HTTPS
 
-## How to update content
+DNS changes may take up to 24 hours. Return to the repository's **Settings → Pages**, wait for the custom domain to verify and the certificate to become available, and enable **Enforce HTTPS**. Test:
 
-### Add a new publication
+- `https://atmridwanulhaque.com/` (primary English page)
+- `https://www.atmridwanulhaque.com/` (www alias)
+- `https://atmridwanulhaque.com/bn/` (Bengali page)
 
-1. In `index.html`, copy one `<article class="publication-card" ...>` inside `#publication-grid`.
-2. Set `data-category` to `wash`, `finance` or `policy` so the category filter works. Use `finance` for Soft Microfinance articles.
-3. Replace the title, short summary, publisher, date and outbound link with the verified information.
-4. Update the publication count label in the filter controls if desired; the JavaScript counter itself updates automatically.
+Official instructions:
+- GitHub: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+- GitHub domain verification: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages
+- Namecheap: https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages/
 
-### Update latest work
+## 2. Deploy or update the site
 
-Edit the cards in the `#latest` section of `index.html`. Keep descriptions factual, add a date/status if known, and link to an official project page or published article when available.
+1. Download and extract this ZIP.
+2. Clone the existing repository using GitHub Desktop: `https://github.com/TanjimArup/atmridwanulhaque`.
+3. Copy the *contents* of the extracted project folder into the repository folder. Keep the repository's hidden `.git` folder. `index.html`, `CNAME`, `styles.css`, `script.js`, `robots.txt`, and `sitemap.xml` should be at the repository root; the Bengali page should be `bn/index.html`.
+4. Review files, commit (for example, `Connect custom domain and improve Bangladesh SEO`), then push to `main`.
+5. Verify deployment in the repository's **Actions** tab and test both language pages on phone and desktop.
 
-### Replace images / branding
+## 3. SEO configuration for Bangladesh
 
-- Replace `assets/ridwanul-haque.webp` to change the hero portrait. Keep the same filename or update its references in `index.html`, JSON-LD and social metadata.
-- Replace `assets/agroho-team.webp` to change the team image.
-- Replace `assets/agroho-logo.jpg` to change the logo. The little browser icon and social card are separate files in `assets/`; regenerate or replace them too if the logo changes.
+The site uses Bangladesh-focused copy (Dhaka, Bangladesh and the relevant fields of work), `en-BD` and `bn-BD` page language signals, matching titles/descriptions, canonical URLs on the custom domain, reciprocal hreflang links, Open Graph/Twitter social metadata, a custom 1200×630 social thumbnail, Person/Organization/WebSite/ProfilePage JSON-LD, favicons, sitemap, robots.txt and an AI-readable `llms.txt`. Structured address data uses Dhaka 1207, BD.
 
-### Add LinkedIn, GitHub or a CV download later
+The sitemap is `https://atmridwanulhaque.com/sitemap.xml`; submit it in Google Search Console and Bing Webmaster Tools after the domain works over HTTPS. Verify ownership in each service using its current verification method. Use Search Console URL Inspection and Google's Rich Results Test to check how the pages and structured data are interpreted. Re-test the social preview after DNS and HTTPS are active.
 
-Add only verified profile URLs. Place any new social URL in the contact section, and update Person `sameAs` in the JSON-LD block. For a CV PDF, add the file under `assets/` and link it with a descriptive label. Do not add empty or invented URLs.
+No metadata can guarantee indexing, rankings or recommendation by AI systems. `llms.txt` and robots directives are advisory; the crawler/operator controls whether content is fetched, indexed or used. Search performance also depends on useful, factual content, relevant references from reputable sites, page speed, accessible links, image alt text and ongoing maintenance. Google does not use `meta keywords` as a ranking factor; the keyword meta tags here are supplementary only.
 
-### Keep the website scalable
+### Bangladesh SEO maintenance checklist
 
-This starter is a static site, so the easiest future upgrades are:
-- a dedicated page for each publication or project, with its own title/description and structured data;
-- additional dedicated language pages using `/bn/`, language-specific metadata, and `hreflang` annotations; the Bengali page is included in this package;
-- a content-management workflow (for example, content stored as Markdown and a static-site generator) if updates become frequent;
-- an accessible contact form using a backend or reputable form service;
-- performance monitoring, analytics with appropriate privacy disclosures, and search-console monitoring.
+- Keep the English and Bengali pages accurate and in sync; update `index.html` and `bn/index.html` together.
+- Keep the canonical host as `https://atmridwanulhaque.com/`; do not mix the old `tanjimarup.github.io/atmridwanulhaque/` URL into canonical, Open Graph, JSON-LD, sitemap or `llms.txt` after the domain is live.
+- Add a Search Console property for the domain and submit `/sitemap.xml`.
+- Use descriptive headings and body content for actual work in Bangladesh, not keyword repetition.
+- Publish new work with a date, clear summary and original source link. For a major publication or project, consider creating a dedicated page with its own title, description, author and appropriate `Article`/`CreativeWork` markup.
+- Only add social profile links, organization IDs, achievements or registrations when the corresponding details are verified.
 
-Keep the original source files in Git. Make changes in a branch or backup commit first and test at 320px mobile width, tablet and desktop before merging.
+## 4. Update site content
 
-## Research notes & source checks
+- Latest work: edit the cards inside the `#latest` section in both `index.html` and `bn/index.html`.
+- Publications: copy a `.publication-card` within `#publication-grid` in both pages; use `data-category="wash"`, `finance`, or `policy`. Replace title, summary, publisher, date and target URL with verified details.
+- Images: replace matching files in `assets/` or update all references. Keep the Open Graph thumbnail around 1200×630 pixels and ensure it is publicly accessible.
+- Contacts: update the visible contact links and JSON-LD details together.
 
-- **Agroho / mobile hospitals:** The current portfolio copy describes mobile-hospital services based on the professional information supplied for the profile. The external Drip by Drip link has been removed from the public website at the owner’s request.
-- **Sanitation supply-chain research:** IRC catalogues *Sanitation demand and supply in rural Bangladesh: rapid assessment to identify supply chain challenges* and lists IRC and BRAC as publishers: https://www.ircwash.org/resources/sanitation-demand-and-supply-rural-bangladesh
-- **Faecal-sludge recovery paper:** IRC lists *Nothing left to waste: the prospects for faecal sludge-based organic fertiliser in Bangladesh*: https://www.ircwash.org/sites/default/files/faecal_sludge_management_paper_brac_irc_2015.pdf
-- **Soft microfinance coverage:** Daily Sun published *Soft Microfinance, a Welfare Financing* at https://www.daily-sun.com/post/773576/; The New Nation lists its related piece at https://dailynewnation.com/news/682638; New Age has *Soft microfinance: potential game-changer* at https://www.newagebd.net/post/opinion/258247/soft-microfinance-potential-game-changer.
-  The New Age page is dated **19 February 2025** by the publisher; the website card shows `Feb 2025` rather than the different day supplied in the original notes.
-- **Financial Express article:** The supplied link contained a malformed space and an outdated route. The verified article page used in the site is https://today.thefinancialexpress.com.bd/views-reviews/influx-of-rohingya-refugees-entails-a-serious-burden-on-the-economy-1513516045?amp=true, dated 17 December 2017 and attributed to ATM Ridwanul Haque.
-- Some newspaper/e-paper URLs may be moved, restricted, or require an account. The site links directly to those publishers; check each link periodically.
+## Notes on supplied details
 
-## Content review items before launch
-
-- Confirm the final official spelling/style for the MBA institution line, because the supplied details name both Military Institute of Science and Technology and Bangladesh University of Professionals.
-- BRAC WASH roles are consolidated into one 2012–2018 entry, following the requested website revision.
-- Verify the wording, exact years and attribution of all awards and programme metrics before promoting them in other materials.
-- Add any verified LinkedIn/GitHub URLs, CV file, and official Agroho website/registration record if you have them.
-
-
-## English and Bengali pages
-
-The English page lives at `index.html`. The Bengali page lives at `bn/index.html` and is independently crawlable with `lang="bn-BD"`, a Bengali title/description, structured data, canonical URL, and `hreflang` links. The header language link switches between the two pages. Publication titles remain in their original published language where appropriate; summaries, navigation, project descriptions, profile copy and controls are translated.
-
-When editing later, update the English wording in `index.html` and its equivalent Bengali wording in `bn/index.html` so that both languages remain consistent. If the site is deployed at a different repository path or custom domain, update canonical, Open Graph, JSON-LD, `robots.txt`, `sitemap.xml`, `llms.txt`, and the `hreflang` URLs in both HTML files.
-
-The two decorative orbit circles around the portrait were removed at the owner's request. Paragraph copy is justified, and the About section includes the supplied 63-district and international professional-visit details. A small footer note includes the owner-supplied claim that copyright for the Soft Microfinance model is registered in ATM Ridwanul Haque’s name.
+- The website presents the claim that copyright for the Soft Microfinance model is registered in ATM Ridwanul Haque's name because this detail was supplied by the profile owner; verify the registration record and legal phrasing before treating the claim as independently verified.
+- The BRAC WASH positions are consolidated as 2012–2018 according to the supplied revision.
+- The site preserves owner-supplied career and programme claims; confirm metrics and awards before relying on them in formal outreach.
