@@ -94,3 +94,20 @@ No metadata can guarantee indexing, rankings or recommendation by AI systems. `l
 - The website presents the claim that copyright for the Soft Microfinance model is registered in ATM Ridwanul Haque's name because this detail was supplied by the profile owner; verify the registration record and legal phrasing before treating the claim as independently verified.
 - The BRAC WASH positions are consolidated as 2012–2018 according to the supplied revision.
 - The site preserves owner-supplied career and programme claims; confirm metrics and awards before relying on them in formal outreach.
+
+
+## Latest update: Grokipedia and publication previews
+- Added the Soft Microfinance Grokipedia reference to the Latest Work section in both English and Bengali pages.
+- Added publisher-icon preview tiles to the publication cards. These use the publisher's site icon where an article-specific image is not exposed or accessible; they are source-brand previews, not screenshots of the article pages.
+- The publication URLs remain the original publisher/repository links.
+
+
+### Phase 5 update
+- Moved the Grokipedia Soft Microfinance reference to the first position in Latest Work & Ideas in both English and Bengali.
+- Applied the existing featured green-card treatment to the Grokipedia card and returned the Soft Microfinance model-development card to the standard card style.
+
+
+### Phase 6 update
+- Added an ambient cursor-following radial spotlight to both language pages. The glow uses a soft green tint, is stronger in dark mode, and follows the pointer with animation-frame throttling.
+- The effect is disabled for touch/coarse-pointer devices and users who request reduced motion. It is decorative (`aria-hidden`) and does not intercept clicks or keyboard interaction.
+- The implementation uses the site's existing plain CSS and JavaScript; no framework, package installation or external script is required.
