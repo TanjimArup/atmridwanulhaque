@@ -187,7 +187,7 @@ html[data-theme="dark"] .section-dark { background: #0a120d; }
 .chip-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip-list span { padding: 7px 10px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); font-size: 10px; }
 .latest-section .split-heading { margin-bottom: 35px; }
-.latest-grid { display: grid; grid-template-columns: 1.13fr 1fr 1fr; gap: 16px; }
+.latest-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .latest-card { display: flex; flex-direction: column; align-items: flex-start; min-height: 310px; padding: 25px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 .latest-card-featured { background: var(--green-deep); color: white; border-color: var(--green-deep); }
 .latest-topline { width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 27px; font-size: 10px; font-weight: 780; letter-spacing: .09em; text-transform: uppercase; }
@@ -208,9 +208,16 @@ html[data-theme="dark"] .section-dark { background: #0a120d; }
 .filter-button span { margin-left: 4px; opacity: .85; }
 .publication-count { flex: 0 0 auto; margin: 0; color: var(--muted); font-size: 10px; }
 .publication-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.publication-card { display: flex; flex-direction: column; min-height: 282px; padding: 21px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); transition: border-color .2s, transform .2s, box-shadow .2s; }
+.publication-card { display: flex; flex-direction: column; min-height: 340px; padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); transition: border-color .2s, transform .2s, box-shadow .2s; }
 .publication-card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--green) 60%, var(--line)); box-shadow: var(--shadow); }
 .publication-card[hidden] { display: none !important; }
+.publication-thumb { position: relative; display: flex; align-items: center; gap: 13px; min-height: 92px; margin-bottom: 18px; padding: 15px 16px; overflow: hidden; border: 1px solid var(--line); border-radius: 11px; background: linear-gradient(120deg, var(--green-pale), var(--surface-soft)); }
+.publication-thumb img { display: block; flex: 0 0 48px; width: 48px; height: 48px; object-fit: contain; border-radius: 9px; background: #fff; padding: 5px; }
+.publication-thumb-copy { display: flex; min-width: 0; flex-direction: column; gap: 5px; }
+.publication-thumb-kicker { color: var(--muted); font-size: 8px; font-weight: 850; letter-spacing: .12em; }
+.publication-thumb-copy strong { color: var(--ink); font-size: 13px; line-height: 1.3; }
+.publication-thumb-symbol { position: absolute; top: 12px; right: 14px; color: var(--green-deep); font-size: 15px; }
+.preview-explainer { margin: -10px 0 20px; color: var(--muted); font-size: 10px; line-height: 1.7; }
 .publication-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 19px; color: var(--green-deep); font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .publication-meta span:last-child { color: var(--muted); white-space: nowrap; }
 .publication-card h3 { margin-bottom: 11px; font-size: 17px; letter-spacing: -.026em; line-height: 1.35; }
@@ -394,3 +401,36 @@ html[lang="bn-BD"] h1, html[lang="bn-BD"] h2, html[lang="bn-BD"] h3 { letter-spa
 html[lang="bn-BD"] .eyebrow { letter-spacing: 0; }
 html[lang="bn-BD"] .brand-copy small { letter-spacing: 0; }
 html[lang="bn-BD"] .primary-nav > a { font-size: 12px; }
+
+
+/* Ambient cursor spotlight: subtle green radial light, disabled for touch and reduced-motion users. */
+.ambient-spotlight {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    560px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+    rgba(16, 159, 86, .075) 0,
+    rgba(16, 159, 86, .025) 34%,
+    transparent 72%
+  );
+  mix-blend-mode: soft-light;
+  transition: opacity .24s ease;
+  will-change: opacity;
+}
+.ambient-spotlight.is-active { opacity: 1; }
+html[data-theme="dark"] .ambient-spotlight {
+  background: radial-gradient(
+    620px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+    rgba(67, 199, 124, .17) 0,
+    rgba(67, 199, 124, .065) 32%,
+    transparent 72%
+  );
+  mix-blend-mode: screen;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .ambient-spotlight { display: block; }
+}

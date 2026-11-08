@@ -62,6 +62,49 @@
   filterButtons.forEach(button => button.addEventListener('click', () => applyPublicationFilter(button.dataset.filter || 'all')));
   applyPublicationFilter('all');
 
+
+
+  // Subtle cursor-following spotlight. It is deliberately omitted on touch devices
+  // and for visitors who request reduced motion.
+  const spotlight = document.querySelector('.ambient-spotlight');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (spotlight && finePointer.matches && !reducedMotion.matches) {
+    let animationFrame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+
+    const hideSpotlight = () => spotlight.classList.remove('is-active');
+
+    const trackPointer = event => {
+      if (event.pointerType === 'touch' || reducedMotion.matches) {
+        hideSpotlight();
+        return;
+      }
+
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (animationFrame) return;
+
+      animationFrame = window.requestAnimationFrame(() => {
+        spotlight.style.setProperty('--spotlight-x', `${pointerX}px`);
+        spotlight.style.setProperty('--spotlight-y', `${pointerY}px`);
+        spotlight.classList.add('is-active');
+        animationFrame = 0;
+      });
+    };
+
+    window.addEventListener('pointermove', trackPointer, { passive: true });
+    window.addEventListener('pointerout', event => {
+      if (!event.relatedTarget) hideSpotlight();
+    });
+    window.addEventListener('blur', hideSpotlight);
+    reducedMotion.addEventListener?.('change', event => {
+      if (event.matches) hideSpotlight();
+    });
+  }
+
   const yearNode = document.getElementById('year');
   if (yearNode) yearNode.textContent = String(new Date().getFullYear());
 })();
